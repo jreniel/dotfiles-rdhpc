@@ -92,6 +92,18 @@ if ! [ -x "$(command -v tmux)" ]; then
     rm -rf c79688739f1cf25e99346ce7533c73f9
 fi
 
+# ----------------------------------------
+# deploy tmux package manager
+# ----------------------------------------
+if ! [ -d $HOME/.tmux/plugins/tmux ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+git clone https://gist.github.com/jreniel/1d794a2e1ae05e35570031ec2e7b6a96 tmux
+mv tmux/.tmux.conf $HOME/.tmux.conf
+rm -rf tmux
+
+
+
 
 # --------------------------------------------
 # Deploy vimrc
